@@ -3,7 +3,11 @@ import Nav from "@/components/atoms/Nav";
 // import Search from "@/components/atoms/Search";
 import AuthButtons from "@/components/atoms/AuthButtons";
 
-const Header = () => {
+interface headerProps {
+  authHandler: (val: boolean) => void;
+}
+
+const Header = ({authHandler}:headerProps) => {
   return (
     <header className="p-3 bg-dark text-white">
       <div className="container">
@@ -11,7 +15,7 @@ const Header = () => {
           <Logo />
           <Nav />
           {/* <Search /> */}
-          <AuthButtons />
+          <AuthButtons authHandler={authHandler} />
         </div>
       </div>
     </header>

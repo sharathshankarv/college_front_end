@@ -1,11 +1,15 @@
-import React from 'react';
-import Headers from '@/components/molecules/Header';
+
+import Carousel from "@/components/atoms/Carousel";
+import LandingClientWrapper from "@/components/molecules/LandingClientWrapper";
+
 
 const Landing = () => {
-    return (
-      <Headers />
-    );
-  };
-  
-  export default Landing;
-  
+  return (
+    <>
+      <LandingClientWrapper />
+      <Carousel />
+    </>
+  );
+};
+
+export default Landing;
