@@ -1,11 +1,19 @@
+import Link from "next/link";
+
 const Nav = () => {
+  const headerLinks = [
+    { name: "Courses", url: "/courses" },
+    { name: "Notice Board", url: "/notice_board" },
+    { name: "FAQs", url: "/faq" },
+    { name: "About", url: "/about" },
+  ]
     return (
       <ul className="nav ms-auto mb-2 justify-content-end mb-md-0">
-        {["Courses", "Notice Board", "FAQs", "About"].map((item, index) => (
+        {headerLinks.map((item, index) => (
           <li key={index}>
-            <a href="#" className="nav-link px-2 text-white">
-              {item}
-            </a>
+            <Link href={item.url} className="nav-link px-2 text-white">
+              {item.name}
+            </Link>
           </li>
         ))}
       </ul>
