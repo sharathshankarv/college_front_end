@@ -20,16 +20,16 @@ const CommonModal = ({ children, isOpen, onClose }: CommonModalProps) => {
 };
 
 // Named exports for Heading, Body, and Footer
-CommonModal.Heading = ({ children }: { children: ReactNode }) => (
-  <Modal.Header className="text-center" closeButton>{children}</Modal.Header>
-);
+CommonModal.Heading = function Heading({ children }: { children: ReactNode }){
+  return <Modal.Header className="text-center" closeButton>{children}</Modal.Header>
+};
 
-CommonModal.Body = ({ children }: { children: ReactNode }) => (
-  <Modal.Body style={{padding:"20px"}}>{children}</Modal.Body>
-);
+CommonModal.Body = function Body({ children }: { children: ReactNode }){
+  return <Modal.Body style={{padding:"20px"}}>{children}</Modal.Body>
+};
 
-CommonModal.Footer = ({ children }: { children: ReactNode }) => (
-  <Modal.Footer className="text-center">{children}</Modal.Footer>
-);
+CommonModal.Footer = function Footer({ children }: { children: ReactNode }){
+  return <Modal.Footer className="text-center">{children}</Modal.Footer>
+}
 
 export default CommonModal;
