@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import StoreProvider from "@/providers/storeProvider";
-import BootstrapClient from "@/components/atoms/BootstrapClient";
+import BootstrapWrapper from "@/components/atoms/BootstrapWrapper";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -31,7 +31,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <StoreProvider>
-          <BootstrapClient />
+          <BootstrapWrapper />
           {children}
         </StoreProvider>
       </body>

@@ -1,12 +1,11 @@
-
+"use client"; 
 import Carousel from "@/components/atoms/Carousel";
-import LandingClientWrapper from "@/components/molecules/LandingClientWrapper";
-
+import LandingClient from "./LandingClient"; // Importing LandingClient
 
 const Landing = () => {
   return (
     <>
-      <LandingClientWrapper />
+      <LandingClient />
       <Carousel />
     </>
   );
