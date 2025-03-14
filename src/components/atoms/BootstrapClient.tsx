@@ -1,12 +1,9 @@
 "use client";
 import { useEffect } from "react";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 const BootstrapClient = () => {
-  useEffect(() => {
-    // @typescript-eslint/no-require-imports
-    require("bootstrap/dist/js/bootstrap.bundle.min.js");
-  }, []);
-
+  
   return null; 
 };
 
