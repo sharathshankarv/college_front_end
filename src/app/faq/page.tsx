@@ -1,6 +1,6 @@
 function Faqs(){
     return (
-        <div>FAQ's page</div>
+        <div>FAQ s page</div>
     )
 }
 

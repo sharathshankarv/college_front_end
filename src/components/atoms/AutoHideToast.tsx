@@ -14,7 +14,7 @@ interface AutohideToastProps {
     | "light"
     | "dark";
   delay?: number;
-  resetToast? : () => void;
+  resetToast?: () => void;
 }
 
 function AutohideToast({
@@ -22,18 +22,23 @@ function AutohideToast({
   children,
   variant,
   delay = 5000,
-  resetToast
+  resetToast,
 }: AutohideToastProps) {
   const [show, setShow] = useState(true);
 
   return (
     <Toast
       bg={variant}
-      onClose={() => {setShow(false); resetToast && resetToast()}}
+      onClose={() => {
+        setShow(false);
+        if (resetToast) {
+          resetToast();
+        }
+      }}
       show={show}
       delay={delay}
       autohide
-      style={{position: "fixed", top: "1rem", right: "1rem", zIndex: 9999}}
+      style={{ position: "fixed", top: "1rem", right: "1rem", zIndex: 9999 }}
     >
       <Toast.Header>
         <strong className="me-auto">{title}</strong>
