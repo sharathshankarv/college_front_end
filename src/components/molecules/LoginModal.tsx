@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React from "react";
 import CommonModal from "@/components/atoms/Modal";
-import AutohideToast from "@/components/atoms/AutoHideToast";
 import LoginForm from "../atoms/LoginForm";
 
 interface LoginModalProps {
