@@ -76,7 +76,11 @@ const LoginForm = ({ setLoginModalOpen }: LoginFormInterface) => {
       }).unwrap();
       if (response.token) {
         dispatch(setCredentials({ user: response.user }));
-        setLoginModalOpen?.(false) || router.push("/");
+        if (setLoginModalOpen) {
+          setLoginModalOpen(false);
+        } else {
+          router.push("/");
+        }
         setLoginDetails(initLoginState);
         refetch();
       }
