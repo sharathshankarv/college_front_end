@@ -26,6 +26,7 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   } catch (err) {
     // Invalid token → redirect to home (or login)
+    console.error("Invalid token:", err);
     return NextResponse.redirect(new URL("/", request.url));
   }
 }

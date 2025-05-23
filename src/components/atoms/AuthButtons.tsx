@@ -1,5 +1,4 @@
 import { useAppSelector } from '@/hooks';
-import useWhoAmI from "@/hooks/useWhoAmI";
 import { useLogoutMutation } from "@/redux/apis/authApi";
 import { isAuthenticated } from '@/redux/slices/authSlice';
 
@@ -9,7 +8,6 @@ interface AuthButtonsProps {
 }
 
 const AuthButtons = ({ authHandler }: AuthButtonsProps) => {
-  const { user, isLoading, isError } = useWhoAmI();
   const isUserAuthenticated = useAppSelector(isAuthenticated);
   const [logout] =  useLogoutMutation();
 
