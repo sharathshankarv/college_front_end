@@ -3,15 +3,9 @@ import { RootState } from "../store"; // Adjust the path as needed
 
 // Centralized baseQuery
 const baseQuery = fetchBaseQuery({
-  baseUrl: "https://node-crud-2.vercel.app/",
-  prepareHeaders: (headers, { getState }) => {
-    const token = (getState() as RootState).auth.token;
-    if (token) {
-      headers.set("Authorization", `Bearer ${token}`);
-    }
-    return headers;
-  },
-});
+  baseUrl: process.env.NEXT_PUBLIC_BASE_URL,
+  credentials: "include",
+  });
 
 // Base API slice
 export const api = createApi({
