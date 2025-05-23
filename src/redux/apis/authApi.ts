@@ -1,5 +1,6 @@
   import { api } from "../api";
-  import { setCredentials, logout } from "../slices/authSlice"; // Import slice actions
+  import { setCredentials, logout } from "../slices/authSlice";
+  import {API_ROUTES} from "@/constants/apiRoutes";
 
   export const authApi = api.injectEndpoints({
     endpoints: (builder) => ({
@@ -8,7 +9,7 @@
         { email: string; password: string }
       >({
         query: (credentials) => ({
-          url: "login",
+          url: API_ROUTES.LOGIN,
           method: "POST",
           body: credentials,
           credentials: "include"
@@ -23,16 +24,16 @@
         },
       }),
       getProfile: builder.query<{ name: string; email: string }, void>({
-        query: () => "/profile",
+        query: () => API_ROUTES.PROFILE,
         providesTags: ["User"],
       }),
       me: builder.query<{ name: string; email: string, data: unknown }, void>({
-        query: () => "/me",
+        query: () => API_ROUTES.ME,
         providesTags: ["User"],
       }),
       logout: builder.mutation<void, void>({
         query: () => ({
-          url: "/logout",
+          url: API_ROUTES.LOGOUT,
           method: "POST",
         }),
         async onQueryStarted(_, { dispatch }) {
