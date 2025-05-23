@@ -26,7 +26,7 @@
         query: () => "/profile",
         providesTags: ["User"],
       }),
-      me: builder.query<{ name: string; email: string, data: any }, void>({
+      me: builder.query<{ name: string; email: string, data: unknown }, void>({
         query: () => "/me",
         providesTags: ["User"],
       }),

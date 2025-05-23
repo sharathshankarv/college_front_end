@@ -1,5 +1,4 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { RootState } from "../store"; // Adjust the path as needed
 
 // Centralized baseQuery
 const baseQuery = fetchBaseQuery({
