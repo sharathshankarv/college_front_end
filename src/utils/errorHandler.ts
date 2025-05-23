@@ -8,10 +8,10 @@ import { SerializedError } from "@reduxjs/toolkit";
  */
 export function getErrorMessage(error: unknown): string {
   if (!error) return "An unknown error occurred.";
-
   if ("status" in (error as FetchBaseQueryError)) {
     const err = error as FetchBaseQueryError;
-    return `Error ${err.status}: ${JSON.stringify(err.data)}`;
+    const errorMessage = err.data && typeof err.data === 'object' && 'error' in err.data ? JSON.stringify(err.data.error) : 'Unknown error';
+    return `${err.status}: ${errorMessage}`;
   } else {
     const err = error as SerializedError;
     return err.message || "Unexpected error occurred.";
